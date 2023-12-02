@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    
+}
+.crosshair{
+    position: absolute;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    height: 80px;
+    width: 80px;
+    background: url(Crosshair.png) center no-repeat;
+    background-size: cover;
+    z-index: 10;
+}
+.game-container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    cursor: none;
+}
+.rotation{
+    position: absolute;
+    top: 70%;
+    left: calc(50% - 100px);
+    transform-origin:  50% bottom;
+    display: inline-flex;
+    perspective: 200px;
+    z-index: 4;
+}
+.cannon{
+    width: 200px;
+    height: 400px;
+    background-color: rgba(50, 153, 201, 1);
+    transform-origin: bottom center;
+    border-radius: 10px;
+}
+.enemyItem{
+    min-height: 100px;
+    min-width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    transition: left 4s ease-in-out, top 1s ease-in-out;
+}
+
+.enemyItem.right{
+    left: 100% ;
+    top: 10% !important;
+}
+.enemyItem.left{
+    left: 0 ;
+    top: 10% !important;
+}
+.bullet{
+    z-index: 2;
+    position: absolute;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 1;
+    transition: opacity .2s, height .5s, width .5s ;
+}
+.bullet-inner{
+    z-index: 3;
+    position: absolute;
+    background-repeat: no-repeat !important;
+    background-position-x: center !important;
+    background-position-y: center !important;
+    background-size: contain !important;
+}
+
